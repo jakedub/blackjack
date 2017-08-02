@@ -48,15 +48,13 @@ function handValue (hand) {
          myHandValue =10
          break;
    }
-   while (myHandValue >=4)
-   myHandValue = newCard + 1;
    }
  }
 }
 console.log(handValue());
 
 function moveAces(){
-  if (hand === "A" && myHandValue <= 20){
+  if (hand === "A"){
     return 1;
   } else {
     return 11;
