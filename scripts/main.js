@@ -12,9 +12,8 @@ const hand = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J","Q","K","A"];
 
 function handValue (hand) {
   let myHandValue = 0;
-  moveAces(hand);
   for (let i=0; i<hand.length; i++) {
-    if (hand[i] === "J" || hand[i] === "Q" || hand[i] === "K") {
+      if (hand[i] === "J" || hand[i] === "Q" || hand[i] === "K") {
       myHandValue += 10;
     } else if (hand[i] === "2" || hand[i] === "3" || hand[i] === "4" || hand[i] === "5" || hand[i] === "6" || hand[i] === "7"|| hand[i] === "8" || hand[i] === "9" || hand[i] === "10") {
     switch (hand[i]) { //posible to change this to myHandValue += Number(hand[i]) right?
@@ -59,14 +58,6 @@ function handValue (hand) {
 }
 console.log(handValue());
 
-function moveAces(hand) {
-  for (let j=0; j<hand.length; j++) {
-    if (hand[j] === "A"){
-      hand.splice(hand[j], 1);
-      hand.push("A");
-    }
-  }
-}
 
 
 /* -----  Hints ------
