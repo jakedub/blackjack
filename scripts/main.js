@@ -12,18 +12,26 @@
 function handValue (hand) {
   let total = 0;
   for (let i=0; i<hand.length; i++){
-    if (hand[i].indexOf(total)) {
+    if (hand[i] === "K" || hand[i] === "Q" || hand[i] === "J") { ///[]indexOf(hand)
       total += 10;
-      console.log(total);
-    }else if (hand[i] === "2" || hand[i] === "3" || hand[i] === "4" || hand[i] === "5" || hand[i] === "6" || hand[i] === "7"|| hand[i] === "8" || hand[i] === "9" || hand[i] === "10"){
-      total += Number(hand[i]);
-    } else if (hand[i] === "A" && total <= 10){
-      return total += 11;
-    } else {
-      return total += 1;
+    }else if (hand[i] === "A"){
+      if (total <= 10){
+        total += 11;
+      } else {
+        total += 1;
     }
+      }
+      else {
+          total += Number(hand[i]);
+    }
+    if (total > 21 && hand.includes("A")){
+      total -= 10;
+    }
+  }
+  return total;
 }
-console.log(hand("2", "2","8"));
+
+console.log(handValue(["8", "A", "A", "A"]));
 
 
 
